@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send('hello world i am a srija bot Trial - 5 ')
+	res.send('hello world i am a srija bot Trial - 6 ')
 })
 
 // for facebook verification
@@ -93,8 +93,8 @@ function sendGenericMessage(sender) {
 			"payload": {
 				"template_type": "generic",
 				"elements": [{
-					"title": "Item1",
-					"subtitle": "Full Sleeve Shirt",
+					"title": "Classic White T-Shirt",
+					"subtitle": "100% Soft and Luxurious Cotton",
 					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 					"buttons": [{
 						"type": "web_url",
@@ -103,16 +103,16 @@ function sendGenericMessage(sender) {
 					}, {
 						"type": "postback",
 						"title": "Postback",
-						"payload": "Payload for first element in a generic bubble",
+						"payload": "Title : White T-Shirt || Quantity - 2 || Price - 50 ",
 					}],
 				}, {
-					"title": "Item2",
-					"subtitle": "Half Sleeve shirt",
+					"title": "Classic Gray T-Shirt",
+					"subtitle": "100% Soft and Luxurious Cotton",
 					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "Postback",
-						"payload": "Payload for second element in a generic bubble",
+						"payload": "Title : White T-Shirt || Quantity - 1 || Price - 25 ",
 					}],
 				}]
 			}
