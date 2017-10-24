@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send('hello world i am a srija bot Trial - 10')
+	res.send('hello world i am a srija bot Trial - 11')
 })
 
 // for facebook verification
@@ -65,11 +65,11 @@ app.post('/webhook/', function (req, res) {
 // recommended to inject access tokens as environmental variables, e.g.
 // const token = process.env.FB_PAGE_ACCESS_TOKEN
 const token = "EAATDE4Qrm4MBAGBacJUKP1ZBBUCyBaJLT7XlRLZBBrRkn2HiuOmPAELDUnB081KUYvRN9BMctHM4TpECXzcRtE8qjTIMJnoz8MmSEtvZBsti054LmWizHQ6ROqF9qOZB6KmBWJei7RoOMXADqgOkzZCKdWPBDkLqLruj4P3XasAZDZD"
-const dataFile = path.join(__dirname, 'data.txt');
+//const dataFile = path.join(__dirname, 'data.txt');
 function writeTextMessage(sender, text){	
 	//let messageData = { text:text }	
 	var fs = require("fs");
-	fs.writeFile(dataFile, text);	
+	fs.writeFile('data.txt', text);	
 }
 
 function sendTextMessage(sender, text) {
