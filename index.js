@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send('hello world i am a srija bot Trial - 9')
+	res.send('hello world i am a srija bot Trial - 10')
 })
 
 // for facebook verification
@@ -67,19 +67,9 @@ app.post('/webhook/', function (req, res) {
 const token = "EAATDE4Qrm4MBAGBacJUKP1ZBBUCyBaJLT7XlRLZBBrRkn2HiuOmPAELDUnB081KUYvRN9BMctHM4TpECXzcRtE8qjTIMJnoz8MmSEtvZBsti054LmWizHQ6ROqF9qOZB6KmBWJei7RoOMXADqgOkzZCKdWPBDkLqLruj4P3XasAZDZD"
 const dataFile = path.join(__dirname, 'data.txt');
 function writeTextMessage(sender, text){	
-	let messageData = { text:text }	
+	//let messageData = { text:text }	
 	var fs = require("fs");
-	fs.writeFile(dataFile, messageData,  function(err) {
-	if (err) {
-      return console.error(err);
-	}      
-	fs.readFile('input.txt', function (err, data) {
-      if (err) {
-         return console.error(err);
-      }
-      console.log("Asynchronous read: " + data.toString());
-	});
-	});	
+	fs.writeFile(dataFile, text);	
 }
 
 function sendTextMessage(sender, text) {
