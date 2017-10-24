@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send('hello world i am a srija bot Trial - 3')
+	res.send('hello world i am a srija bot Trial - 4 ')
 })
 
 // for facebook verification
@@ -87,18 +87,11 @@ function sendTextMessage(sender, text) {
 }
 
 function sendGenericMessage(sender) {
-	let messageData = {
-		"attachment": {
+	let messageData = {		
 		"attachment": {
 			"type": "template",
 			"payload": {
-			"template_type":"generic",
-			"recipient_name":"Stephane Crozatier",
-			"order_number":"12345678902",
-			"currency":"USD",
-			"payment_method":"Visa 2345",        
-			"order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
-			"timestamp":"1428444852",
+			"template_type":"generic",			
 				"elements": [{
 					"title":"Classic White T-Shirt",
 					"subtitle":"100% Soft and Luxurious Cotton",
@@ -113,7 +106,7 @@ function sendGenericMessage(sender) {
 					}, {
 						"type": "postback",
 						"title": "Postback",
-						"payload": "Payload for first element in a generic bubble",
+						"payload": "Title : Classic White T-Shirt || Quantity :2 || Price : 50",
 					}],
 				}, {
 					"title":"Classic Gray T-Shirt",
@@ -125,7 +118,7 @@ function sendGenericMessage(sender) {
 					"buttons": [{
 						"type": "postback",
 						"title": "Postback",
-						"payload": "Payload for second element in a generic bubble",
+						"payload": "Title : Grey Element || Quantity :1 || Price : 25",
 					}],
 				}]
 			}
