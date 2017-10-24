@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send('hello world i am a srija bot Trial - 4 ')
+	res.send('hello world i am a srija bot Trial - 5 ')
 })
 
 // for facebook verification
@@ -91,14 +91,11 @@ function sendGenericMessage(sender) {
 		"attachment": {
 			"type": "template",
 			"payload": {
-			"template_type":"generic",			
+				"template_type": "generic",
 				"elements": [{
-					"title":"Classic White T-Shirt",
-					"subtitle":"100% Soft and Luxurious Cotton",
-					"quantity":2,
-					"price":50,
-					"currency":"USD",
-					"image_url":"http://petersapparel.parseapp.com/img/whiteshirt.png",
+					"title": "Item1",
+					"subtitle": "Full Sleeve Shirt",
+					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 					"buttons": [{
 						"type": "web_url",
 						"url": "https://www.messenger.com",
@@ -106,19 +103,16 @@ function sendGenericMessage(sender) {
 					}, {
 						"type": "postback",
 						"title": "Postback",
-						"payload": "Title : Classic White T-Shirt || Quantity :2 || Price : 50",
+						"payload": "Payload for first element in a generic bubble",
 					}],
 				}, {
-					"title":"Classic Gray T-Shirt",
-					"subtitle":"100% Soft and Luxurious Cotton",
-					"quantity":1,
-					"price":25,
-					"currency":"USD",
-					"image_url":"http://petersapparel.parseapp.com/img/grayshirt.png",
+					"title": "Item2",
+					"subtitle": "Half Sleeve shirt",
+					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "Postback",
-						"payload": "Title : Grey Element || Quantity :1 || Price : 25",
+						"payload": "Payload for second element in a generic bubble",
 					}],
 				}]
 			}
