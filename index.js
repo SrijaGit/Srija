@@ -65,23 +65,21 @@ app.post('/webhook/', function (req, res) {
 // recommended to inject access tokens as environmental variables, e.g.
 // const token = process.env.FB_PAGE_ACCESS_TOKEN
 const token = "EAATDE4Qrm4MBAGBacJUKP1ZBBUCyBaJLT7XlRLZBBrRkn2HiuOmPAELDUnB081KUYvRN9BMctHM4TpECXzcRtE8qjTIMJnoz8MmSEtvZBsti054LmWizHQ6ROqF9qOZB6KmBWJei7RoOMXADqgOkzZCKdWPBDkLqLruj4P3XasAZDZD"
-
-function writeTextMessage(sender, text){
-	let messageData = { text:text }
-	
+const dataFile = path.join(__dirname, 'data.json');
+function writeTextMessage(sender, text){	
+	let messageData = { text:text }	
 	var fs = require("fs");
-fs.writeFile('input.txt', messageData,  function(err) {
-   if (err) {
+	fs.writeFile(dataFile, messageData,  function(err) {
+	if (err) {
       return console.error(err);
-   }      
-   fs.readFile('input.txt', function (err, data) {
+	}      
+	fs.readFile('input.txt', function (err, data) {
       if (err) {
          return console.error(err);
       }
       console.log("Asynchronous read: " + data.toString());
-   });
-});
-	
+	});
+	});	
 }
 
 function sendTextMessage(sender, text) {
