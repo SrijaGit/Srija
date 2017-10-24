@@ -6,7 +6,6 @@ i have added console.log on line 48
 
 
 
-
  */
 'use strict'
 
