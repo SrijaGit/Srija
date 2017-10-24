@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send('hello world i am a srija bot Trial - 2')
+	res.send('hello world i am a srija bot Trial - 3')
 })
 
 // for facebook verification
@@ -92,7 +92,7 @@ function sendGenericMessage(sender) {
 		"attachment": {
 			"type": "template",
 			"payload": {
-			"template_type":"receipt",
+			"template_type":"generic",
 			"recipient_name":"Stephane Crozatier",
 			"order_number":"12345678902",
 			"currency":"USD",
