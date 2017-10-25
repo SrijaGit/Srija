@@ -27,7 +27,7 @@ app.use(bodyParser.json())
 
 // Index route
 app.get('/', function (req, res) {
-	res.send('hello world i am a srija bot Trial - 12')
+	res.send('hello world i am a srija bot Trial - 13')
 	
 })
 
@@ -90,16 +90,43 @@ const token = "EAATDE4Qrm4MBAGBacJUKP1ZBBUCyBaJLT7XlRLZBBrRkn2HiuOmPAELDUnB081KU
 function sendOrder(sender,orderArray) {
     let messageData = {
 	    "attachment": {
-		    "type": "template",
+		    "type": "template",			
 		    "payload": {
-				"template_type": "receipt",
-				"recipient_name":"Stephane Crozatier",
-				"order_number":"12345678902",
-				"currency":"USD",
-			    "elements": [ {
-				    "title": orderArray[0],
-				    "subtitle": orderArray[1],
-				    "image_url": "shopping.jpg"				   
+			"template_type":"receipt",
+			"recipient_name":"Stephane Crozatier",
+			"order_number":"12345678902",
+			"currency":"USD",
+			"payment_method":"Visa 2345",        
+			"order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
+			"timestamp":"1428444852",         
+			"address":{
+				"street_1":"1 Hacker Way",
+				"street_2":"",
+				"city":"Menlo Park",
+				"postal_code":"94025",
+				"state":"CA",
+				"country":"US"
+			},
+			"summary":{
+				"subtotal":75.00,
+				"shipping_cost":4.95,
+				"total_tax":6.19,
+				"total_cost":56.14
+			},
+			"adjustments":[
+			{
+				"name":"New Customer Discount",
+				"amount":20
+			},
+			{
+				"name":"$10 Off Coupon",
+				"amount":10
+			}
+			],
+			"elements": [ {
+			    "title": orderArray[0],
+			    "subtitle": orderArray[1],
+			    "image_url": "shopping.jpg"				   
 			    }]
 		    }
 	    }
