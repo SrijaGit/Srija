@@ -93,6 +93,9 @@ function sendOrder(sender,orderArray) {
 		    "type": "template",
 		    "payload": {
 				"template_type": "receipt",
+				"recipient_name":"Stephane Crozatier",
+				"order_number":"12345678902",
+				"currency":"USD",
 			    "elements": [ {
 				    "title": orderArray[0],
 				    "subtitle": orderArray[1],
