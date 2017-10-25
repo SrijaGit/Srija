@@ -35,15 +35,12 @@ app.get('/', function (req, res) {
 app.get('/webhook/', function (req, res) {
 	if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
 		res.send(req.query['hub.challenge'])
+		sendGreetingMessage()
 	}
 	res.send('Error, wrong token')
 })
-
-app.get('/test/', function (req, res) {
-	
-	
-	orderDetails=req.query['order'];
-	
+app.get('/test/', function (req, res) {	
+	orderDetails=req.query['order'];	
 	orderArr = orderDetails.split("|")
 	res.send('Read value' + orderArr[0] + orderArr[1])
 })
@@ -213,6 +210,26 @@ function sendGenericMessage(sender) {
 	    if (error) {
 		    console.log('Error sending messages: ', error)
 	    } else if (response.body.error) {
+		    console.log('Error: ', response.body.error)
+	    }
+    })
+}
+
+
+function sendGreetingMessage() {
+    let messageData = { 'Welcome to order management system' }
+    request({
+	    url: 'https://graph.facebook.com/v2.6/me/messages',
+	    qs: {access_token:token},
+	    method: 'POST',
+		json: {
+		    recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+		    console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
 		    console.log('Error: ', response.body.error)
 	    }
     })
