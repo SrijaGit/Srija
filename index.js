@@ -27,7 +27,7 @@ app.use(bodyParser.json())
 
 // Index route
 app.get('/', function (req, res) {
-	res.send('hello world i am a srija bot Trial - 11')
+	res.send('hello world i am a srija bot Trial - 12')
 	
 })
 
@@ -92,16 +92,11 @@ function sendOrder(sender,orderArray) {
 	    "attachment": {
 		    "type": "template",
 		    "payload": {
-				"template_type": "generic",
+				"template_type": "receipt",
 			    "elements": [ {
 				    "title": orderArray[0],
 				    "subtitle": orderArray[1],
-				    "image_url": "shopping.jpg",
-				    "buttons": [{
-					    "type": "postback",
-					    "title": "Postback",
-					    "payload": "Polo|1|Dress Red|28|$54",
-				    }],
+				    "image_url": "shopping.jpg"				   
 			    }]
 		    }
 	    }
